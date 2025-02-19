@@ -34,11 +34,11 @@ const mergeSortedArrays2 = (arr1, arr2) => {
   // edge cases
   // incase one of the arrays is empty
 
-  if (arr1.length == 0) {
+  if (!arr1) {
     return arr2;
   }
 
-  if (arr2.length == 0) {
+  if (!arr2) {
     return arr1;
   }
 
@@ -70,4 +70,4 @@ const mergeSortedArrays2 = (arr1, arr2) => {
   return newArray;
 };
 
-console.log(mergeSortedArrays2(array1, array2));
+console.log(mergeSortedArrays2("x", "y"));
