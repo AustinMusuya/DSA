@@ -40,8 +40,26 @@ const firstReccuring2 = (input) => {
   }
   return undefined;
 };
-firstReccuring2([2, 5, 1, 2, 3, 5, 1, 2, 4]);
+// firstReccuring2([2, 5, 1, 2, 3, 5, 1, 2, 4]);
 
-console.log(firstReccuring2([2, 5, 1, 2, 3, 5, 1, 2, 4]));
-console.log(firstReccuring2([2, 1, 1, 2, 3, 5, 1, 2, 4]));
-console.log(firstReccuring2([2, 3, 4, 5]));
+// console.log(firstReccuring2([2, 5, 1, 2, 3, 5, 1, 2, 4]));
+// console.log(firstReccuring2([2, 1, 1, 2, 3, 5, 1, 2, 4]));
+// console.log(firstReccuring2([2, 3, 4, 5]));
+
+// optimized approach3
+// Approach: use inbuilt javascript map class.
+
+const firstReccuring3 = (input) => {
+  let map = new Map();
+  for (let i = 0; i < input.length; i++) {
+    if (map.has(input[i])) {
+      return input[i];
+    } else {
+      map.set(input[i], i);
+    }
+  }
+  return undefined;
+};
+console.log(firstReccuring3([2, 5, 1, 2, 3, 5, 1, 2, 4]));
+console.log(firstReccuring3([2, 1, 1, 2, 3, 5, 1, 2, 4]));
+console.log(firstReccuring3([2, 3, 4, 5]));
