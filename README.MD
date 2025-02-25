@@ -23,7 +23,7 @@ Many programming languages provide built-in data structures that abstract away c
 │   ├── graphs
 │   ├── dynamic-programming
 │   └── sorting-algorithms
-├── 📂 custom-structures
+├── 📂 custom-built-data-structures
 │   ├── python
 │   │   ├── linked_list.py
 │   │   ├── hashmap.py
