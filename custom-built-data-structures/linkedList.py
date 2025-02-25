@@ -110,6 +110,17 @@ class LinkedList():
 
         return currentNode
 
+    def remove(self, index):
+        if index == 0:
+            self.head['next'] = self.head
+
+        previousNode = self.traverseToIndex(index - 1)
+        unwantedNode = previousNode['next']
+        previousNode['next'] = unwantedNode['next']
+        self.length += 1
+
+        return self.printList()
+
 
 mylinkedList = LinkedList(50)
 
@@ -121,5 +132,9 @@ mylinkedList.append(20)
 print(mylinkedList.printList())
 
 mylinkedList.insert(2, 80)
+
+print(mylinkedList.printList())
+
+mylinkedList.remove(0)
 
 print(mylinkedList.printList())
