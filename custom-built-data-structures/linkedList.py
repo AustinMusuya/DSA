@@ -85,6 +85,31 @@ class LinkedList():
 
         return array
 
+    def insert(self, index, value):
+        if index >= self.length:
+            return self.append(value)
+        newNode = {
+            'value': value,
+            'next': None
+        }
+        leader = self.traverseToIndex(index - 1)
+        holdingPointer = leader['next']
+        leader['next'] = newNode
+        newNode['next'] = holdingPointer
+        self.length += 1
+
+        return self.printList()
+
+    def traverseToIndex(self, index):
+        counter = 0
+        currentNode = self.head
+
+        while counter != index:
+            currentNode = currentNode['next']
+            counter += 1
+
+        return currentNode
+
 
 mylinkedList = LinkedList(50)
 
@@ -93,5 +118,8 @@ mylinkedList.append(40)
 mylinkedList.append(30)
 mylinkedList.append(20)
 
+print(mylinkedList.printList())
+
+mylinkedList.insert(2, 80)
 
 print(mylinkedList.printList())
