@@ -47,6 +47,7 @@ class LinkedList {
     this.tail = this.head;
     this.length = 1;
   }
+
   append(value) {
     const newNode = {
       value: value,
@@ -57,6 +58,7 @@ class LinkedList {
     this.length++;
     return this;
   }
+
   prepend(value) {
     const newNode = {
       value: value,
@@ -77,6 +79,33 @@ class LinkedList {
     }
     return array;
   }
+
+  insert(index, value) {
+    if (index >= this.length) {
+      return this.append(value);
+    }
+    const newNode = {
+      value: value,
+      next: null,
+    };
+    const leader = this.traverseToIndex(index - 1);
+    const holdingPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdingPointer;
+    this.length++;
+
+    return this.prinList();
+  }
+
+  traverseToIndex(index) {
+    let counter = 0;
+    let currentNode = this.head;
+    while (counter != index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
 }
 
 let myLinkedList = new LinkedList(50);
@@ -84,7 +113,10 @@ let myLinkedList = new LinkedList(50);
 myLinkedList.append(10);
 myLinkedList.append(40);
 myLinkedList.append(30);
-
 myLinkedList.prepend(70);
+
+console.log(myLinkedList.prinList());
+
+myLinkedList.insert(0, 80);
 
 console.log(myLinkedList.prinList());
