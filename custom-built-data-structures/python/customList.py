@@ -1,7 +1,7 @@
 # Try to recreate an array using javascript classes with a few functions.
 
 
-#   Approach:
+#  Approach:
 #  Create a class with constructor with field variables of length and data.
 #  Set the variables to 0 and an empty object/map respectively
 
@@ -13,11 +13,11 @@
 
 #  Shift Method.
 
-#  if the length is 0 then return undefined as the output
-#  set a variable index to the value of 0.
-#  loop through the elements while the last item is greater than the index, storing the data at index + 1 in data at the index then increment index by 1
-#  delete the last item and decrement the length by 1
-#  return the first item
+#  If the length is 0 then return undefined as the output
+#  Set a variable index to the value of 0.
+#  Loop through the elements while the last item is greater than the index, storing the data at index + 1 in data at the index then increment index by 1
+#  Delete the last item and decrement the length by 1
+#  Return the first item
 
 class MyArray():
     def __init__(self, length=0, data={}):
