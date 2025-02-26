@@ -11,6 +11,23 @@
 //     },
 // }
 
+//  Approach:
+// Create a class with constructor with field variables of length and data.
+// Set the variables to 0 and an empty object/map respectively
+
+// Push Method.
+// Create a push method to add value to the data object.[length] key and increment the length variable by 1
+
+// Pop Method.
+// Create a pop method to delete the last added value at the  data.length key and decrement the length variabel by 1
+
+// Shift Method.
+// if the length is 0 then return undefined as the output
+// set a variable index to the value of 0.
+// loop through the elements while the last item is greater than the index, storing the data at index + 1 in data at the index then increment index by 1
+// delete the last item and decrement the length by 1
+// return the first item
+
 class newArray {
   constructor() {
     this.length = 0;
@@ -49,7 +66,7 @@ class newArray {
 
 const myArray = new newArray();
 
-myArray.push("hi");
+myArray.push("Hi");
 myArray.push("I");
 myArray.push("am");
 myArray.push("Austin");
@@ -61,7 +78,7 @@ myArray.push("apples");
 console.log(myArray);
 
 myArray.shift();
-console.log(myArray);
+console.log(myArray.shift());
 
 myArray.pop();
 console.log(myArray);
