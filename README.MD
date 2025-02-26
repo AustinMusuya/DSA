@@ -15,7 +15,7 @@ Many programming languages provide built-in data structures that abstract away c
 ## 📂 Project Structure
 
 ```
-📦 dsa-practice
+📦 DSA
 ├── 📂 problems
 │   ├── arrays
 │   ├── linked-lists
@@ -51,11 +51,11 @@ Many programming languages provide built-in data structures that abstract away c
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/austinmusuya/dsa-practice.git
+   git clone https://github.com/austinmusuya/DSA.git
    ```
 2. Navigate to the desired language folder:
    ```sh
-   cd dsa-practice/custom-structures/python
+   cd DSA/custom-built-data-structures/python
    ```
 3. Run any file to test a custom implementation:
    ```sh
