@@ -2,22 +2,44 @@
 
 
 #  Approach:
-#  Create a class with constructor with field variables of length and data.
-#  Set the variables to 0 and an empty object/map respectively
 
-#  Push Method.
-#  Create a push method to add value to the data object.[length] key and increment the length variable by 1
+# 1. Setup
+'''  
+Create a class with constructor with field variables of length and data.
+Set the variables to 0 and an empty object/map respectively
+'''
 
-#  Pop Method.
-#  Create a pop method to delete the last added value at the  data.length key and decrement the length variabel by 1
+# 2. Push Method. (adds item to the end of the list/array)
+''' 
+Create a push method to add value to the data object.[length] key and increment the length variable by 1
+'''
 
-#  Shift Method.
+# 3. Pop Method.(removes the last item)
+''' 
+ Create a pop method to delete the last added value at the data.length key (data[this.length - 1]),
+and decrement the length variable by 1
+'''
 
-#  If the length is 0 then return undefined as the output
-#  Set a variable index to the value of 0.
-#  Loop through the elements while the last item is greater than the index, storing the data at index + 1 in data at the index then increment index by 1
-#  Delete the last item and decrement the length by 1
-#  Return the first item
+# 4. Shift Method. (Removes the first item)
+''' 
+   If the length is 0 then return undefined as the output
+   Set a variable index to the value of 0.
+   Loop through the elements while the last item is greater than the index, 
+   storing the data at index + 1 (data[index + 1]), in data at the current index (data[index])
+   then increment index by 1
+   Delete the last item and decrement the length by 1
+   Return the first item
+'''
+
+# 5. Unshift method (adds an item to the begin of array/list)
+'''
+    Set variable index and set it to the length of the array.
+    Loop through the array while the length of the array/list is more than 0.
+    Store the value of data[index -1] to data[index] and decrement the value of index
+    set data[0] to the value passed as the parameter.
+    Increment the length by 1
+'''
+
 
 class MyArray():
     def __init__(self, length=0, data={}):
@@ -49,6 +71,20 @@ class MyArray():
 
         return firstItem
 
+    def unshift(self, value):
+        index = self.length
+
+        while index > 0:
+            # shifts value to the right
+            self.data[index] = self.data[index - 1]
+            index -= 1
+
+        self.data[0] = value
+
+        self.length += 1
+
+        return self
+
     def __str__(self):
         return f"{self.length} , {self.data}"
 
@@ -65,7 +101,7 @@ newArray.append('Musuya')
 print(newArray)
 newArray.pop(4)
 print(newArray)
-newArray.shift()
+newArray.unshift(500)
 
 
 print(newArray)
