@@ -34,12 +34,11 @@ class Queue {
   }
 
   dequeue() {
-    if (!this.last) return null;
+    if (!this.first) return null;
     if (this.last === this.first) {
-      this.first = null;
+      this.last = null;
     }
-    // const holdingpoint = this.first;
-    this.last = this.last.next;
+    this.first = this.first.next;
     this.length--;
     return this;
   }
@@ -56,6 +55,13 @@ myStack.enqueue(50);
 myStack.enqueue(40);
 
 myStack.enqueue(90);
-console.log(myStack.dequeue());
+
+myStack.dequeue();
+myStack.dequeue();
+myStack.dequeue();
+myStack.dequeue();
+// myStack.dequeue();
+// myStack.dequeue();
+// myStack.dequeue();
 
 console.log(myStack);
