@@ -67,6 +67,8 @@ class LinkedList():
         self.tail = newNode
         self.length += 1
 
+        return self
+
     def prepend(self, value):
         newNode = {
             'value': value,
@@ -76,29 +78,36 @@ class LinkedList():
         self.head = newNode
         self.length += 1
 
-    def printList(self):
+        return self
+
+    # def printList(self):
+    #     array = []
+    #     currentNode = self.head
+    #     while currentNode is not None:
+    #         array.append(currentNode['value'])
+    #         currentNode = currentNode['next']
+
+    #     return array
+    
+    def __str__(self):
         array = []
         currentNode = self.head
         while currentNode is not None:
             array.append(currentNode['value'])
             currentNode = currentNode['next']
 
-        return array
-
+        return f"LinkedList length: {self.length} | {array} | Head: {self.head['value']} | Tail : {self.tail['value']}"
+    
     def insert(self, index, value):
         if index >= self.length:
-            return self.append(value)
-        newNode = {
-            'value': value,
-            'next': None
-        }
-        leader = self.traverseToIndex(index - 1)
-        holdingPointer = leader['next']
-        leader['next'] = newNode
-        newNode['next'] = holdingPointer
-        self.length += 1
+            return self.append(value)  # Ensures the instance is returned
 
-        return self.printList()
+        newNode = {'value': value, 'next': None}
+        leader = self.traverseToIndex(index - 1)
+        newNode['next'] = leader['next']
+        leader['next'] = newNode
+        self.length += 1
+        return self
 
     def traverseToIndex(self, index):
         counter = 0
@@ -112,14 +121,17 @@ class LinkedList():
 
     def remove(self, index):
         if index == 0:
-            self.head['next'] = self.head
+            self.head = self.head['next']  # Properly update head
+            self.length -= 1
+            return self
 
         previousNode = self.traverseToIndex(index - 1)
         unwantedNode = previousNode['next']
         previousNode['next'] = unwantedNode['next']
-        self.length += 1
-
-        return self.printList()
+        if previousNode['next'] is None:  # Update tail if last node is removed
+            self.tail = previousNode
+        self.length -= 1
+        return self
 
 
 mylinkedList = LinkedList(50)
@@ -129,12 +141,12 @@ mylinkedList.append(40)
 mylinkedList.append(30)
 mylinkedList.append(20)
 
-print(mylinkedList.printList())
+print(mylinkedList)
 
 mylinkedList.insert(2, 80)
 
-print(mylinkedList.printList())
+print(mylinkedList)
 
 mylinkedList.remove(0)
 
-print(mylinkedList.printList())
+print(mylinkedList)
