@@ -51,7 +51,7 @@ class LinkedList {
     this.length++;
     return this;
   }
-
+  /*
   remove(value) {
     let currentNode = this.head;
     let index = 0;
@@ -66,6 +66,32 @@ class LinkedList {
     }
     this.length--;
     return this;
+  }
+*/
+  remove(value) {
+    if (!this.head) return this; // If list is empty, return
+
+    // Handle removal of the head node
+    if (this.head.value === value) {
+      this.head = this.head.next;
+      this.length--;
+      return this;
+    }
+
+    let currentNode = this.head;
+    let previousNode = null;
+
+    while (currentNode) {
+      if (currentNode.value === value) {
+        previousNode.next = currentNode.next; // Bypass the node
+        this.length--;
+        return this; // Exit after first removal
+      }
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+
+    return this; // Return list if value is not found
   }
 
   traverse(index) {
@@ -91,7 +117,9 @@ myLinkedList.prepend(40);
 console.log(myLinkedList);
 console.log(myLinkedList.printList());
 myLinkedList.remove(20);
-myLinkedList.remove(60);
+// myLinkedList.remove(60);
 // myLinkedList.remove(20);
+console.log(myLinkedList.printList());
+myLinkedList.remove(60);
 console.log(myLinkedList.printList());
 // console.log(myLinkedList.traverse(4));
