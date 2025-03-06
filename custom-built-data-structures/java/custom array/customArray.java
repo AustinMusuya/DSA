@@ -1,6 +1,6 @@
-import java.util.ArrayList;
-
-// Try to recreate an array using javascript classes with a few functions.
+public class customArray {
+    public static void main(String[] args) {
+        // Try to recreate an array using javascript classes with a few functions.
 
 // Expected output
 
@@ -33,8 +33,8 @@ import java.util.ArrayList;
 // If the length is 0 then return undefined as the output
 // Set a variable index to the value of 0.
 
-/* 
-   Loop through the elements while the last item is greater than the index, 
+/*
+   Loop through the elements while the last item is greater than the index,
    storing the data at index + 1 (data[index + 1]), in data at the current index (data[index])
    then increment index by 1
 */
@@ -42,23 +42,13 @@ import java.util.ArrayList;
 // Delete the last item and decrement the length by 1
 // Return the first item
 
-// 5. Unshift method (adds an item to the begin of array/list)
+// 5. Unshift method (adds an item to the beginning of array/list)
 
 // Set variable index and set it to the length of the array.
 // Loop through the array while the length of the array/list is more than 0.
 // Store the value of data[index -1] to data[index] and decrement the value of index
 // set data[0] to the value passed as the parameter.
 // Increment the length by 1
-
-public class customArray {
-
-    public static void main(String[] args) {
-        ArrayList<String> names = new ArrayList<>();
-
-        names.add("Austin");
-        names.add("Mark");
-
-        System.out.println(names);
-
+        System.out.println("Niaje");
     }
 }
