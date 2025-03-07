@@ -11,6 +11,8 @@ public class customArray {
         System.out.println("Data: " + myArray.getData() + " " +  "Length: " + myArray.getLength());
         myArray.shift();
         System.out.println("Data: " + myArray.getData() + " " +  "Length: " + myArray.getLength());
+        myArray.unshift("Mercy");
+        System.out.println("Data: " + myArray.getData() + " " +  "Length: " + myArray.getLength());
 
 
     }
