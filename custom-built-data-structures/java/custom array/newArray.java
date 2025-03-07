@@ -98,8 +98,15 @@ public class newArray {
         return firstItem;
     }
 
-    public String unshift(){
-        return null;
+    public String unshift(String value){
+        int index = length;
+
+        while (index > 0 ){
+            data.put(index, data.get(index - 1));
+            index--;
+        }
+        length++;
+        return data.put(0, value);
     }
 
 }
