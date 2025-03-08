@@ -94,8 +94,6 @@ public class LinkedList {
         newNode.next = currentNode;
         length++;
 
-
-
     }
 
     public Node traverseIndex(int index){
