@@ -24,15 +24,15 @@ const inception = () => {
 // Have two approaches the recursive approach & iterative approach
 
 // Recursive approach
+
 const findFactorial = (number) => {
   if (number < 0) {
     return undefined;
   }
-
-  if (number === 2) {
-    return 2;
+  if (number === 0 || number === 1) {
+    return 1; // Base case
   }
-  return number * findFactorial(number - 1);
+  return number * findFactorial2(number - 1); // Recursive case
 };
 
 console.log(findFactorial(5));
@@ -47,7 +47,7 @@ const findFactorial2 = (number) => {
   let result = number;
 
   for (let i = number - 1; i > 1; i--) {
-    result = result * i;
+    result *= i;
   }
   return result;
 };
