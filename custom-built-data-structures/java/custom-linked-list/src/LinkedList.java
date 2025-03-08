@@ -16,7 +16,7 @@
 // method: Prepend
 // create a method, prepend(value), takes value as parameter. This should atleast try to add a new node to the head of the linked list
 // point the newNode.next value to the head memory address, and change the value of the head to the newNode thereafter
-// increament the length class variable by one then return the object
+// increment the length class variable by one then return the object
 
 // method: printList
 // create a method, printList(). This should atleast try to represent the value of linked list in an array.
@@ -24,6 +24,10 @@
 // create a while loop  for whenever the currentNode isn't null/none, you add the currentNode.value to the array
 // set the currentNode equal to the currentNode.next
 // return the array after exiting the loop
+
+
+//method: insert(index, value)
+//This method should insert a node at a certain index
 
 
 class Node {
@@ -72,6 +76,37 @@ public class LinkedList {
         newNode.next = head;
         head = newNode;
         length++;
+    }
+
+    public void insert(int index, int number){
+        Node newNode = new Node(number);
+        if (index >= this.length || index < 0) {
+            this.append(number);
+            return;
+        }
+        if(index == 0){
+            this.prepend(number);
+            return;
+        }
+        Node currentNode = traverseIndex(index);
+        Node previousNode = traverseIndex(index - 1);
+        previousNode.next = newNode;
+        newNode.next = currentNode;
+        length++;
+
+
+
+    }
+
+    public Node traverseIndex(int index){
+        if (index >= length || index < 0){ return null; }
+        int counter = 0;
+        Node currentNode = head;
+        while(counter < index){
+            currentNode = currentNode.next;
+            counter++;
+        }
+        return currentNode;
     }
 
     public void printList() {
