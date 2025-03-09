@@ -7,8 +7,32 @@
 
 // Iterative Approach
 
-function fibonacciIterative(n) {}
+function fibonacciIterative(n) { // Time Complexity Linear O(n)
+  // edge cases
+  if (n <= 0) {
+    return null;
+  }
+  if (n == 1) {
+    return 0;
+  }
+  let fiboArray = [0, 1];
+
+  for (let i = 2; i <= n; i++) {
+    fiboArray.push(fiboArray[i - 1] + fiboArray[i - 2]);
+  }
+  return fiboArray[n];
+}
+
+console.log(fibonacciIterative(6));
 
 // Recursive Approach
 
-function fibonacciRecursive(n) {}
+function fibonacciRecursive(n) { // Time Complexity Exponential O(2^n)
+  if (n < 2) {
+    return n;
+  }
+
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+}
+
+// console.log(fibonacciRecursive(6));
