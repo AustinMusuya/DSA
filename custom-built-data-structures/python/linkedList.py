@@ -96,7 +96,7 @@ class LinkedList():
             array.append(currentNode['value'])
             currentNode = currentNode['next']
 
-        return f"LinkedList length: {self.length} | {array} | Head: {self.head['value']} | Tail : {self.tail['value']}"
+        return f"LinkedList | length: {self.length} | {array} | Head: {self.head['value']} | Tail : {self.tail['value']}"
     
     def insert(self, index, value):
         if index >= self.length:
