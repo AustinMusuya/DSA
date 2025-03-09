@@ -80,6 +80,26 @@ class LinkedList {
     return array;
   }
 
+  reverse() {
+    if (this.length === 1) {
+      return this.head;
+    }
+    this.tail = this.head;
+    let first = this.head;
+    let second = first.next;
+
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+
+    return this;
+  }
+
   insert(index, value) {
     if (index >= this.length) {
       return this.append(value);
@@ -134,5 +154,8 @@ myLinkedList.insert(2, 80);
 console.log(myLinkedList.prinList());
 
 myLinkedList.remove(2);
+
+console.log(myLinkedList.prinList());
+myLinkedList.reverse();
 
 console.log(myLinkedList.prinList());

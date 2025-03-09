@@ -132,6 +132,24 @@ class LinkedList():
             self.tail = previousNode
         self.length -= 1
         return self
+    
+    def reverse(self):
+        if self.length == 1:
+            return self.head
+        
+        self.tail = self.head
+        first = self.head
+        second = first['next']
+
+        while second:
+            temp = second['next']
+            second['next'] = first
+            first = second
+            second =  temp
+
+        self.head['next'] = None
+        self.head = first
+        return self
 
 
 mylinkedList = LinkedList(50)
@@ -148,5 +166,9 @@ mylinkedList.insert(2, 80)
 print(mylinkedList)
 
 mylinkedList.remove(0)
+
+print(mylinkedList)
+
+mylinkedList.reverse()
 
 print(mylinkedList)
