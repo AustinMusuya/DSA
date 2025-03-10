@@ -107,6 +107,18 @@ public class LinkedList {
         return currentNode;
     }
 
+    public void remove(int index){
+        if (index >= length || index < 0){ System.out.println("Invalid index!");length--; return;}
+
+        if(index == 0){this.head = this.head.next; length--; return;}
+
+        Node previousNode = traverseIndex(index - 1);
+        Node unwantedNode = traverseIndex(index);
+        previousNode.next = unwantedNode.next;
+        
+        length--;
+    }
+
     public void printList() {
         Node current = head;
         while (current != null) {
