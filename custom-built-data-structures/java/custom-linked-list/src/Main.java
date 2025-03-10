@@ -8,8 +8,9 @@ public class Main {
 
         System.out.println("Linked List:");
         myList.printList();
-        System.out.println(myList.traverseIndex(2));
         myList.insert(0, 120);
+        myList.printList();
+        myList.remove(0);
         myList.printList();
 
         System.out.println("Head: " + myList.getHead().value);
