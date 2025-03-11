@@ -37,7 +37,7 @@ const findFactorial = (number) => {
 
 console.log(findFactorial(5));
 
-// iterative approach
+// Iterative approach
 
 const findFactorial2 = (number) => {
   if (number < 0) {
