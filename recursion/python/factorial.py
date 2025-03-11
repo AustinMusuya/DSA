@@ -28,5 +28,33 @@ def inception():
 
 # Recursive approach
 
+def findFactorial(number):
+    if number < 0:
+        return None
+
+    if number == 0 or number == 1:  # base case
+        return 1
+
+    return findFactorial(number - 1) * number  # recursive case
+
+
+print(findFactorial(4))
 
 # Iterative approach
+
+
+def findFactorial2(number):
+    if number < 0:
+        return None
+
+    temp = number - 1
+    result = number
+
+    while temp > 0:
+        result *= temp
+        temp -= 1
+
+    return result
+
+
+# print(findFactorial2(5))
