@@ -12,6 +12,8 @@ public class Main {
         myList.printList();
         myList.remove(0);
         myList.printList();
+        myList.reverse();
+        myList.printList();
 
         System.out.println("Head: " + myList.getHead().value);
         System.out.println("Tail: " + myList.getTail().value);

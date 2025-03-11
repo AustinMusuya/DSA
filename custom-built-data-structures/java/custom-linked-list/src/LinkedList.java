@@ -119,6 +119,25 @@ public class LinkedList {
         length--;
     }
 
+    public void reverse(){
+        if(this.length == 1){
+            System.out.println("Only one node in Linked list");
+        }
+        tail = head;
+        Node first = head;
+        Node second = first.next;
+
+        while (second != null){
+            Node third = second.next;
+            second.next = first;
+            first = second;
+            second = third;
+        }
+        head.next = null;
+        head = first;
+
+    }
+
     public void printList() {
         Node current = head;
         while (current != null) {
