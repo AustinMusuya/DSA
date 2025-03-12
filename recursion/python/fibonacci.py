@@ -23,7 +23,10 @@ def fibonacciIterative(n):
     for i in range(2, n + 1):
         fibo_array.append(fibo_array[i - 1] + fibo_array[i - 2])
 
-    return fibo_array
+    return fibo_array[n]
+
+
+# print(fibonacciIterative(6))
 
 
 # Recursive Approach
@@ -32,6 +35,3 @@ def fibonacciRecursive(n):
         return n
 
     return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
-
-
-# print(fibonacciIterative(5))
