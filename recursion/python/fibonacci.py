@@ -12,4 +12,26 @@ For example: fibonacciRecursive(6) should return 8
 # Iterative Approach
 
 
+def fibonacciIterative(n):
+    if n == 0 or n == 1:
+        return 1
+    if n < 0:
+        return 0
+
+    fibo_array = [0, 1]
+
+    for i in range(2, n + 1):
+        fibo_array.append(fibo_array[i - 1] + fibo_array[i - 2])
+
+    return fibo_array
+
+
 # Recursive Approach
+def fibonacciRecursive(n):
+    if n < 2:
+        return n
+
+    return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
+
+
+# print(fibonacciIterative(5))
