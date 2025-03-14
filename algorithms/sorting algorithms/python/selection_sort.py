@@ -13,6 +13,7 @@ def selectionSort(array):
                 
         # swap the values min and first index
         (array[i], array[min]) = (array[min], array[i]) 
+        
     return array
 
 print(selectionSort(numbers))
