@@ -1,36 +1,28 @@
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
-function quickSort(array, left, right) {
-  if (left < right) {
-    let partitionIndex = partition(array, right, left, right);
-
-    // Sort left and right
-    quickSort(array, left, partitionIndex - 1);
-    quickSort(array, partitionIndex + 1, right);
-  }
-  return array;
-}
-
-function partition(array, pivot, left, right) {
-  let pivotValue = array[pivot];
+function getPivot(arr, left, right) {
+  let pivotValue = arr[right];
   let partitionIndex = left;
 
   for (let i = left; i < right; i++) {
-    if (array[i] < pivotValue) {
-      swap(array, i, partitionIndex);
+    if (arr[i] < pivotValue) {
+      [arr[i], arr[partitionIndex]] = [arr[partitionIndex], arr[i]];
       partitionIndex++;
     }
   }
-  swap(array, partitionIndex, right); // Fix: Ensure pivot is placed correctly
+  [arr[partitionIndex], arr[right]] = [arr[right], arr[partitionIndex]];
   return partitionIndex;
 }
 
-function swap(array, firstIndex, secondIndex) {
-  [array[firstIndex], array[secondIndex]] = [
-    array[secondIndex],
-    array[firstIndex],
-  ];
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivot = getPivot(arr, left, right);
+    quickSort(arr, left, pivot - 1);
+    quickSort(arr, pivot + 1, right);
+  }
+  return arr;
 }
 
-// Select first and last index as 2nd and 3rd parameters
-console.log(quickSort(numbers, 0, numbers.length - 1));
+// Test
+
+console.log(quickSort(numbers));
