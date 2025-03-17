@@ -1,15 +1,10 @@
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
 function quickSort(array, left, right) {
-  const len = array.length;
-  let pivot;
-  let partitionIndex;
-
   if (left < right) {
-    pivot = right;
-    partitionIndex = partition(array, pivot, left, right);
+    let partitionIndex = partition(array, right, left, right);
 
-    //sort left and right
+    // Sort left and right
     quickSort(array, left, partitionIndex - 1);
     quickSort(array, partitionIndex + 1, right);
   }
@@ -26,15 +21,16 @@ function partition(array, pivot, left, right) {
       partitionIndex++;
     }
   }
-  swap(array, right, partitionIndex);
+  swap(array, partitionIndex, right); // Fix: Ensure pivot is placed correctly
   return partitionIndex;
 }
 
 function swap(array, firstIndex, secondIndex) {
-  var temp = array[firstIndex];
-  array[firstIndex] = array[secondIndex];
-  array[secondIndex] = temp;
+  [array[firstIndex], array[secondIndex]] = [
+    array[secondIndex],
+    array[firstIndex],
+  ];
 }
 
-//Select first and last index as 2nd and 3rd parameters
+// Select first and last index as 2nd and 3rd parameters
 console.log(quickSort(numbers, 0, numbers.length - 1));
