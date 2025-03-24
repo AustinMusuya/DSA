@@ -4,7 +4,7 @@
 '''
 The approach here is divide and conquer. We first split the array into two halves recursively
 until we are left with individual elements in single arrays. We then compare values on which is less
-where, the lesser value is pushed to a new array first and the latter is pushed thereafter.
+and which is more, where the former is pushed to a new array first and the latter is pushed thereafter.
 The array is then merged or unwound iteratively with such comparisons till
 we get the full array as sorted
 
