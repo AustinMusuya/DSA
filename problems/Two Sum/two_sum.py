@@ -12,7 +12,7 @@ Input: nums = [2,7,11,15], target = 9
 """
 nums = [2, 7, 11, 15]
 
-# Optimized Approach (hashmap) Time Complexity O(1): Space Complexity O(n)
+# Optimized Approach (hashmap) Time Complexity O(n): Space Complexity O(n)
 """
 We will loop through the array and store each value to a hashmap/dictionary 
 in the (key:value) pair of (number:index) in the array. (i.e, 2 : 0, 7 : 1 )

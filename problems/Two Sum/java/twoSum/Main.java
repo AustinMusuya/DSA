@@ -5,10 +5,13 @@ public class Main {
     public static void main(String[] args) {
         int [] nums = {2, 7, 11, 15};
         int [] result = twoSum(nums, 9);
+        int [] result2 = twoSum2(nums, 9);
 
         System.out.println(Arrays.toString(nums));
 
         System.out.println(Arrays.toString(result));
+
+        System.out.println(Arrays.toString(result2));
 
     }
     /*
@@ -24,7 +27,7 @@ Input: nums = [2,7,11,15], target = 9
 */
 
 
-// Optimized Approach (hashmap) Time Complexity O(1): Space Complexity O(n)
+// Optimized Approach (hashmap) Time Complexity O(n): Space Complexity O(n)
 
     /*
     We will loop through the array and store each value to a hashmap/dictionary
@@ -47,6 +50,30 @@ Input: nums = [2,7,11,15], target = 9
                 return new int[] {numToIndex.get(complement), i};
             }
             numToIndex.put(array[i], i);
+        }
+        return new int[] {};
+    }
+
+
+// Brute Force Approach nested loop Time Complexity O(n^2): Space Complexity O(1)
+
+    /* 
+    We will have two loops (outer and inner) where we will check to see if array[i] is equal to 
+    array[j]
+
+    if so then we will return the two indices of the elements in the array
+
+    Input: nums = [2,7,11,15], target = 9
+
+    */
+    
+    public static int [] twoSum2(int [] array, int target){
+        for (int i = 0; i < array.length; i++ ){
+            for (int j = i + 1; j < array.length; j++){
+                if (array[i] + array[j] == target){
+                    return new int[] {i, j};
+                }
+            }
         }
         return new int[] {};
     }

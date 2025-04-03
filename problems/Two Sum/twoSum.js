@@ -12,7 +12,7 @@ Input: nums = [2,7,11,15], target = 9
 
 const nums = [2, 7, 11, 15];
 
-// Optimized Approach (hashmap) Time Complexity O(1): Space Complexity O(n)
+// Optimized Approach (hashmap) Time Complexity O(n): Space Complexity O(n)
 
 /*
 We will loop through the array and store each value to a hashmap/dictionary 
@@ -41,3 +41,28 @@ const twoSum = (array, target) => {
 };
 
 console.log(twoSum(nums, 9));
+
+// Brute Force Approach nested loop Time Complexity O(n^2): Space Complexity O(1)
+
+/* 
+We will have two loops (outer and inner) where we will check to see if array[i] is equal to 
+array[j]
+
+if so then we will return the two indices of the elements in the array
+
+Input: nums = [2,7,11,15], target = 9
+
+*/
+
+const twoSum2 = (array, target) => {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+  return [];
+};
+
+console.log(twoSum2(nums, 9));
