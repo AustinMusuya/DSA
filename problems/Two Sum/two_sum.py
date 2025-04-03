@@ -12,7 +12,7 @@ Input: nums = [2,7,11,15], target = 9
 """
 nums = [2, 7, 11, 15]
 
-# Optimized Approach (hashmap)
+# Optimized Approach (hashmap) Time Complexity O(1): Space Complexity O(n)
 """
 We will loop through the array and store each value to a hashmap/dictionary 
 in the (key:value) pair of (number:index) in the array. (i.e, 2 : 0, 7 : 1 )
@@ -40,3 +40,27 @@ def two_sum(array, target):
 
 
 print(two_sum(nums, 9))
+
+
+# Brute Force Approach nested loop Time Complexity O(n^2): Space Complexity O(1)
+"""
+We will have two loops (outer and inner) where we will check to see if array[i] is equal to 
+array[j]
+
+if so then we will return the two indices of the elements in the array
+
+Input: nums = [2,7,11,15], target = 9
+
+"""
+
+
+def two_sum2(array, target):
+    for i in range(len(array)):
+        for j in range(i+1, len(array)):
+            if array[i] + array[j] == target:
+                return [i, j]
+
+    return []
+
+
+print(two_sum2(nums, 9))
