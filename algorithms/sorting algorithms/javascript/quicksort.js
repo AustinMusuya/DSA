@@ -52,3 +52,29 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 // Test
 console.log("Original array:", numbersArray);
 console.log("Sorted array:", quickSort([...numbersArray]));
+
+// Simplified quicksort algorithm with recursion.
+
+const quickSort2 = (array) => {
+  if (array.length <= 1) {
+    return array;
+  }
+
+  const left = [];
+  const right = [];
+  const pivot = array[array.length - 1];
+
+  for (let i = 0; i < array.length - 1; i++) {
+    if (array[i] <= pivot) {
+      left.push(array[i]);
+    } else {
+      right.push(array[i]);
+    }
+  }
+
+  return [...quickSort2(left), pivot, ...quickSort2(right)];
+};
+
+// Test
+console.log("Original array:", numbersArray);
+console.log("Sorted array:", quickSort2(numbersArray));
