@@ -12,13 +12,18 @@ public class Main {
 // Insertion Sort
 
 /*
-The approach here is similar to how we sort playing cards in our hands. 
-We move through the array one element at a time, treating the left side as a sorted portion 
-and inserting each new element into its correct position within this sorted part.
+The approach here is similar to how you sort cards in your hand: you pick the next card (element),
+compare it with the ones already sorted (to its left), and insert it in the correct position by shifting
+larger elements to the right.
 
-We start from the second element and compare it with the one before it. 
-If it's smaller, we keep swapping (or shifting) it leftwards until we find the right spot. 
-This process is repeated for every element until the entire array is sorted.
+We move through the array from left to right, assuming that the portion on the left is already sorted.
+At each step, we take the "key" (the current value), and compare it with elements to its left.
+As long as those elements are larger than the key, we shift them one position to the right.
+Once we find the correct spot, we insert the key.
+
+This method avoids repeated swapping and is more efficient than a purely swap-based version.
+
+---
 
 Visualized step-by-step process for insertion sort:
 
