@@ -177,13 +177,13 @@ Result: [1,2,2,3,3,4,8]
 
 ## ✅ Summary Table
 
-| Algorithm      | Time Complexity (Worst) | Space    | Stable | Notes                               |
-| -------------- | ----------------------- | -------- | ------ | ----------------------------------- |
-| Bubble Sort    | O(n²)                   | O(1)     | ✅     | Easy to implement, inefficient      |
-| Insertion Sort | O(n²)                   | O(1)     | ✅     | Good for small/mostly sorted arrays |
-| Selection Sort | O(n²)                   | O(1)     | ❌     | Fewest swaps, but still slow        |
-| Merge Sort     | O(n log n)              | O(n)     | ✅     | Consistent and reliable             |
-| Quick Sort     | O(n²)                   | O(log n) | ❌     | Very fast, but unstable             |
-| Counting Sort  | O(n + k)                | O(n + k) | ✅     | Only for integers / small range     |
+| Algorithm      | Best Case  | Average Case | Worst Case | Space    | Stable | Notes                                |
+| -------------- | ---------- | ------------ | ---------- | -------- | ------ | ------------------------------------ |
+| Bubble Sort    | O(n)       | O(n²)        | O(n²)      | O(1)     | ✅     | Easy to implement, inefficient       |
+| Insertion Sort | O(n)       | O(n²)        | O(n²)      | O(1)     | ✅     | Good for small or mostly sorted data |
+| Selection Sort | O(n²)      | O(n²)        | O(n²)      | O(1)     | ❌     | Fewest swaps, but always O(n²)       |
+| Merge Sort     | O(n log n) | O(n log n)   | O(n log n) | O(n)     | ✅     | Consistent and reliable performance  |
+| Quick Sort     | O(n log n) | O(n log n)   | O(n²)      | O(log n) | ❌     | Very fast with good pivots, unstable |
+| Counting Sort  | O(n + k)   | O(n + k)     | O(n + k)   | O(n + k) | ✅     | Only for integers in small range     |
 
 ---
