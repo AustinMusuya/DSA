@@ -66,6 +66,8 @@ Many programming languages provide built-in data structures that abstract away c
 
 Feel free to contribute by adding new problem solutions, optimizing existing implementations, or adding more custom-built data structures.
 
+### [📄 View the Contribution Guide](https://github.com/AustinMusuya/DSA/blob/master/Problem%20Questions/Contributing.md)
+
 ## 🏆 Let's Master DSA!
 
 This repo is a continuous learning space. Keep solving, keep optimizing, and keep building!
