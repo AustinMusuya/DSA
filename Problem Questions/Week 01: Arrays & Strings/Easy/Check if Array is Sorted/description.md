@@ -1,18 +1,22 @@
-# Reverse an Array
+# Check if Array is Sorted
 
 ## Problem Statement
 
-Given an array of integers, return the array with elements in **reverse order**.
+Given an array of integers, determine if the array is sorted in **non-decreasing order**.
 
 ---
 
 ## Example
 
 **Input:**  
-`nums = [1, 2, 3, 4, 5]`
-
+`nums = [1, 2, 3, 4, 5]`  
 **Output:**  
-`[5, 4, 3, 2, 1]`
+`true`
+
+**Input:**  
+`nums = [1, 3, 2, 4]`  
+**Output:**  
+`false`
 
 ---
 
@@ -24,12 +28,13 @@ Given an array of integers, return the array with elements in **reverse order**.
 
 ## Approach
 
-- Use two pointers (`left` and `right`) to swap values from the ends toward the center.
-- In-place swap until `left >= right`.
+- Loop through the array:
+  - If at any index `i`, `nums[i] > nums[i+1]`, return `false`.
+- If the loop completes, the array is sorted.
 
 ---
 
 ## Desired Time & Space Complexity
 
 - **Time Complexity:** O(n)
-- **Space Complexity:** O(1) (in-place reversal)
+- **Space Complexity:** O(1)
