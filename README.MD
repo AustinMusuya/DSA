@@ -62,6 +62,14 @@ Many programming languages provide built-in data structures that abstract away c
    python linked_list.py
    ```
 
+## 📌 Tutorials
+
+Feel free to contribute by adding new problem solutions, optimizing existing implementations, or adding more custom-built data structures.
+
+### [📘 Sorting Algorithms Tutorials](https://github.com/AustinMusuya/DSA/blob/master/algorithms/sorting%20algorithms/Tutorials.MD)
+
+Step-by-step explanations and visual insights into common sorting algorithms like Bubble Sort, Merge Sort, and Quick Sort.
+
 ## 📌 Contribution
 
 Feel free to contribute by adding new problem solutions, optimizing existing implementations, or adding more custom-built data structures.
