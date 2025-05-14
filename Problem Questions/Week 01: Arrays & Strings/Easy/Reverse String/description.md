@@ -29,4 +29,4 @@ Write a function that takes a string as input and returns the string reversed.
   You must visit each character once to reverse the string, so linear time is optimal.
 
 - **Space Complexity:** O(n)  
-  You’ll need to store a new reversed string unless doing in-place character swapping on a mutable array (not applicable for JS strings, which are immutable).
+  You’ll need to store a new reversed string unless doing in-place character swapping on a mutable array (not applicable for JS/python strings, which are immutable).
