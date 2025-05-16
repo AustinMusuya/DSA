@@ -92,9 +92,7 @@ def majority_element(array: List[int]) -> int:
         if i == candidate:
             count += 1
 
-    if count > len(array) // 2:
-        return candidate
-    return -1
+    return candidate if count > len(array) / 2 else -1
 
 
 print(majority_element([2, 2, 1, 1, 1, 2, 2]))
