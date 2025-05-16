@@ -39,13 +39,21 @@ Return the sorted array in **ascending order**.
 
 """
 
-# Approach: Mechanism for this is shifting the elements in a nested loop whilst comparing with the key.
-# Set a key as the first element and loop through the array comparing with the other values.
-# In the event a value is greater than the key, shift the value to the right and insert the key
-# at the appropriate position. Solution does in place sorting (O(1) Space Complexity)
+"""
+The approach here is similar to how you sort cards in your hand: you pick the next card (element),
+compare it with the ones already sorted (to its left), and insert it in the correct position
+by shifting larger elements to the right.
+
+We move through the array from left to right, assuming that the portion on the left is already sorted.
+At each step, we take the "key" (the current value), and compare it with elements to its left.
+As long as those elements are larger than the key, we shift them one position to the right.
+Once we find the correct spot, we insert the key.
+
+This method avoids repeated swapping and is more efficient than a purely swap-based version.
+"""
+
+
 from typing import List
-
-
 def insertion_sort(array: List[int]) -> List[int]:
     # Edge case: Empty or single value in array
     if len(array) <= 1:
