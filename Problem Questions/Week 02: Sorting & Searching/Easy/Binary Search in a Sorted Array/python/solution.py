@@ -45,9 +45,6 @@ Given a **sorted array** of integers `nums` and an integer `target`, return the 
 from typing import List
 
 
-from typing import List
-
-
 def binary_search(array: List[int], target: int) -> int:
 
     # Edge case: if the input array is empty, there's nothing to search
