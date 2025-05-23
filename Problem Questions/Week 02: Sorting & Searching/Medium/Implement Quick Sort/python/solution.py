@@ -42,10 +42,11 @@ Return the sorted array.
 """
 
 # This is an unstable recursive algorithm that uses a pivoting technique to sort elements
-# in the required non-decreasing order. The pivot is picked as the last element on the sequence
-# (according to my technique). Elements larger than the pivot are placed onto a right subarray
-# and an inverse of the same for smaller elements. Once we get to the smallest subarray,
-# we merge them back up into our final array observing our pivot positions.
+# in the required non-decreasing order. The pivot is picked as the last element in the sequence
+# (according to my technique). Elements larger than the pivot are placed into the right subarray,
+# while elements smaller than the pivot are placed into the left subarray.
+# Once we get to the smallest subarray, we merge them back up into our final array
+# observing our pivot positions.
 
 # Note: This approach will only be Time: O(nlogn) if our recursive calls keep picking good pivots.
 # i.e (elements that are not the largest or the smallest).
