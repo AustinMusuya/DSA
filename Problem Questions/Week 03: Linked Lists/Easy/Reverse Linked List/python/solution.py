@@ -67,10 +67,10 @@ class Linkedlist():
         array = []
         currentNode = self.head
         while currentNode is not None:
-            array.append(currentNode.value)
+            array.append(str(currentNode.value))
             currentNode = currentNode.next
-
-        return f"LinkedList | {array} | Head: {self.head.value} | Tail : {self.tail.value}"
+        return " --> ".join(array)
+        # return f"LinkedList | {array} | Head: {self.head.value} | Tail : {self.tail.value}"
 
     # Lets add function to reverse our current arrangement
     def reverse(self):
@@ -99,6 +99,8 @@ new_list.append(45)
 new_list.append(54)
 new_list.append(65)
 new_list.append(25)
+
+print(new_list)
 
 new_list.reverse()
 
