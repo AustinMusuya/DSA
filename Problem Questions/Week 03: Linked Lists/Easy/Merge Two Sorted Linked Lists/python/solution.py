@@ -161,6 +161,6 @@ def merge_lists(list1: LinkedList, list2: LinkedList) -> LinkedList:
 
 print(merge_lists(new_list2, new_list))
 
-# Note: This approach has O(n) time and O(n) space complexity.
+# Note: This approach has O(n+m) time and O(n+m) space complexity.
 # We create a new list and new nodes instead of reusing existing ones.
 # An in-place merge (relinking nodes) would reduce space to O(1).
