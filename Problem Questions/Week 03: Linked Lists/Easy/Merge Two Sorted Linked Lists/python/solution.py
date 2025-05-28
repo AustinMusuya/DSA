@@ -82,9 +82,11 @@ class LinkedList():
 
     def __str__(self) -> str:
         array = []
+
         if self.head is None:
             return "[]"
-        if self.head.next == None:
+
+        if self.head.next is None:
             array.append(str(self.head.value))
             return "".join(array)
 
