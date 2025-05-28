@@ -138,7 +138,7 @@ def merge_lists(list1: LinkedList, list2: LinkedList) -> LinkedList:
     # Step2: iterate through both lists pushing the lesser value onto our new list
     while list1.length > 0 and list2.length > 0:
 
-        if int(list1.first()) <= int(list2.first()):
+        if list1.first() <= list2.first():
             sorted_list.add(list1.first())
             list1.remove_first()
         else:
